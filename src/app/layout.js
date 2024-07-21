@@ -1,9 +1,11 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
 import Navigation from "@/components/Navigation";
+import { AOSInit } from "@/components/AOS";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className="index-page">
+      <body className={`index-page ${poppins.className}`}>
+        <AOSInit />
         <Navigation />
 
         {children}</body>

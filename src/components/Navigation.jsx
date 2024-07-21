@@ -6,34 +6,32 @@ const Navigation = () => {
     <header id="header" className="header d-flex align-items-center fixed-top">
       <div className="container-fluid container-xl position-relative d-flex align-items-center">
         <Link href="index.html" className="logo d-flex align-items-center me-auto text-decoration-none">
-          {/* <img src="assets/img/logo.png" alt="" /> */}
+          <img src="/img/logo.png" alt="logo" />
           {/* Uncomment the line below if you also wish to use an text logo */}
-          <h1 className="sitename">RDX Rédaction</h1> 
+          {/* <h1 className="sitename">RDX Rédaction</h1>  */}
         </Link>
         <nav id="navmenu" className="navmenu">
           <ul>
             <li>
-              <Link href="#hero" className="active text-decoration-none">
+              <Link href="#Accueil" className="active text-decoration-none">
                 Acceuil
                 <br />
               </Link>
             </li>
             <li>
-              <Link className="text-decoration-none" href="#speakers">Nos Artists</Link>
+              <Link className="text-decoration-none" href="#qui-somme-nous">Qui somme nous?</Link>
             </li>
             <li>
-              <Link className="text-decoration-none" href="#schedule">Evénements</Link>
-            </li>
-            {/* <li>
-              <Link className="text-decoration-none" href="#venue">Venue</Link>
+              <Link className="text-decoration-none" href="#artistes">Artistes</Link>
             </li>
             <li>
-              <Link className="text-decoration-none" href="#hotels">Hotels</Link>
+              <Link className="text-decoration-none" href="#événements">Événements</Link>
             </li>
             <li>
-              <Link className="text-decoration-none" href="#gallery">Gallery</Link>
+              <Link className="text-decoration-none" href="#boutique">Boutique</Link>
             </li>
-            <li className="dropdown">
+
+            {/* <li className="dropdown">
               <Link className="text-decoration-none" href="#">
                 <span>Dropdown</span>{" "}
                 <i className="bi bi-chevron-down toggle-dropdown" />
@@ -83,7 +81,7 @@ const Navigation = () => {
           <i className="mobile-nav-toggle d-xl-none bi bi-list" />
         </nav>
         <Link className="cta-btn d-none d-sm-block text-decoration-none" href="#buy-tickets">
-          Contactez Nous
+          Contact
         </Link>
       </div>
     </header>
