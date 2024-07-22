@@ -1,13 +1,6 @@
-"use client";
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
 const Hero = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <section id="hero" className="hero section dark-background">
       <img src="/img/hero-bg.jpg" alt="" data-aos="fade-in" className="" />
