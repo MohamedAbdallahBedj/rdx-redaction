@@ -1103,7 +1103,7 @@ section,
 .schedule .sub-heading {
   text-align: center;
   font-size: 18px;
-  font-style: italic;
+  /* font-style: italic; */
   margin: 0 auto 30px auto;
 }
 
