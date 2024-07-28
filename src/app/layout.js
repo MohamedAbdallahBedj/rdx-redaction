@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import Navigation from "@/components/Navigation";
 import { AOSInit } from "@/components/AOS";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300"] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({ children }) {
         <AOSInit />
         <Navigation />
 
-        {children}</body>
+        {children}
+        <Footer />
+
+      </body>
     </html>
   );
 }

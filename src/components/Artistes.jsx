@@ -10,8 +10,8 @@ const members = [
       twitter: "",
       facebook: "",
       instagram: "",
-      linkedin: ""
-    }
+      linkedin: "",
+    },
   },
   {
     name: "Hubert Hirthe",
@@ -22,8 +22,8 @@ const members = [
       twitter: "",
       facebook: "",
       instagram: "",
-      linkedin: ""
-    }
+      linkedin: "",
+    },
   },
   {
     name: "Amanda Jepson",
@@ -34,8 +34,8 @@ const members = [
       twitter: "",
       facebook: "",
       instagram: "",
-      linkedin: ""
-    }
+      linkedin: "",
+    },
   },
   {
     name: "William Anderson",
@@ -46,12 +46,10 @@ const members = [
       twitter: "",
       facebook: "",
       instagram: "",
-      linkedin: ""
-    }
-  }
+      linkedin: "",
+    },
+  },
 ];
-
-
 
 const Artistes = () => {
   return (
@@ -66,18 +64,15 @@ const Artistes = () => {
       {/* End Section Title */}
       <div className="container">
         <div className="row gy-4">
-          {members.map(member => (
+          {members.map((member, index) => (
             <div
+              key={`Member ${index}`}
               className="col-xl-3 col-lg-4 col-md-6"
               data-aos="fade-up"
               data-aos-delay={100}
             >
               <div className="member">
-                <img
-                  src={member.imageUrl}
-                  className="img-fluid"
-                  alt=""
-                />
+                <img src={member.imageUrl} className="img-fluid" alt="" />
                 <div className="member-info">
                   <div className="member-info-content">
                     <h4>
