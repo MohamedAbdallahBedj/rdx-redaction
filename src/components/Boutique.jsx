@@ -38,54 +38,53 @@ const Boutique = () => {
     <section id="boutique" className="gallery section">
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
-        <h2>Boutiques</h2>
+        <h2>Boutique</h2>
         <p>
           Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
           consectetur velit
         </p>
       </div>
-
-      {/* End Section Title */}
-      <div className="container" data-aos="fade-up" data-aos-delay={100}>
+      <div className="container schedule">
         <ul
           className="nav nav-tabs"
           role="tablist"
           data-aos="fade-up"
           data-aos-delay={100}
-          style={{ marginInline: "auto", maxWidth: "fit-content" }}
         >
           <li className="nav-item">
             <a
               className="nav-link active"
-              href="#day-1"
+              href="#categorie-1"
               role="tab"
               data-bs-toggle="tab"
             >
-              Day 1
+              Categorie 1
             </a>
           </li>
           <li className="nav-item">
             <a
               className="nav-link"
-              href="#day-2"
+              href="#categorie-2"
               role="tab"
               data-bs-toggle="tab"
             >
-              Day 2
+              Categorie 2
             </a>
           </li>
           <li className="nav-item">
             <a
               className="nav-link"
-              href="#day-3"
+              href="#categorie-3"
               role="tab"
               data-bs-toggle="tab"
             >
-              Day 3
+              Categorie 3
             </a>
           </li>
         </ul>
-
+      </div>
+      {/* End Section Title */}
+      <div className="container" data-aos="fade-up" data-aos-delay={100}>
         <swiper-container
           slides-per-view="4"
           navigation="true"
