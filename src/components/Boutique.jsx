@@ -58,7 +58,7 @@ const Boutique = () => {
               role="tab"
               data-bs-toggle="tab"
             >
-              Categorie 1
+              T-shirts
             </a>
           </li>
           <li className="nav-item">
@@ -68,7 +68,7 @@ const Boutique = () => {
               role="tab"
               data-bs-toggle="tab"
             >
-              Categorie 2
+              Casquettes
             </a>
           </li>
           <li className="nav-item">
@@ -78,7 +78,7 @@ const Boutique = () => {
               role="tab"
               data-bs-toggle="tab"
             >
-              Categorie 3
+              Pantalons
             </a>
           </li>
         </ul>

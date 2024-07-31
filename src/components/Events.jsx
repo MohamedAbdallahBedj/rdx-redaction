@@ -3,19 +3,19 @@ import React from "react";
 const hotels = [
   {
     name: "Non quibusdam blanditiis",
-    imageUrl: "img/event.jpg",
+    imageUrl: "img/event-1.jpg",
     distanceFromVenue: "Petite Description ",
     link: "#",
   },
   {
     name: "Aspernatur assumenda",
-    imageUrl: "img/event.jpg",
+    imageUrl: "img/event-2.jpg",
     distanceFromVenue: "Petite Description ",
     link: "#",
   },
   {
     name: "Dolores ut ut voluptatibu",
-    imageUrl: "img/event.jpg",
+    imageUrl: "img/event-3.jpg",
     distanceFromVenue: "Petite Description ",
     link: "#",
   },

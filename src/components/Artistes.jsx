@@ -49,6 +49,18 @@ const members = [
       linkedin: "",
     },
   },
+  {
+    name: "William Anderson",
+    detailsLink: "speaker-details.html",
+    description: "Debitis iure vero",
+    imageUrl: "/img/artistes/speaker-5.jpg",
+    socialLinks: {
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      linkedin: "",
+    },
+  },
 ];
 
 const Artistes = () => {
