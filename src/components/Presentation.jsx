@@ -15,9 +15,8 @@ const events = [
   },
   {
     time: "",
-    title: "Gestion de Manifestations.",
-    description:
-      "Organisation de manifestations culturelles, sportives ou communautaires.",
+    title: "Planification/Organisation d'expositions d'art.",
+    description: "Organisation d'expositions culturelles, artistiques.",
     speaker: "",
   },
 ];

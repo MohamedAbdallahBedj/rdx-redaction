@@ -2,10 +2,10 @@ import React from "react";
 
 const members = [
   {
-    name: "John Doe",
+    name: "El 7itist",
     detailsLink: "speaker-details.html",
     description: "Quas alias incidunt",
-    imageUrl: "/img/artistes/speaker-1.jpg",
+    imageUrl: "/img/artistes/El 7itist.jpg",
     socialLinks: {
       twitter: "",
       facebook: "",
@@ -14,10 +14,10 @@ const members = [
     },
   },
   {
-    name: "Hubert Hirthe",
+    name: "Narcos",
     detailsLink: "speaker-details.html",
-    description: "Consequuntur odio aut",
-    imageUrl: "/img/artistes/speaker-2.jpg",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/Narcos.jpg",
     socialLinks: {
       twitter: "",
       facebook: "",
@@ -26,10 +26,34 @@ const members = [
     },
   },
   {
-    name: "Amanda Jepson",
+    name: "The7hands",
     detailsLink: "speaker-details.html",
-    description: "Fugiat laborum et",
-    imageUrl: "/img/artistes/speaker-3.jpg",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/The7hands.jpg",
+    socialLinks: {
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      linkedin: "",
+    },
+  },
+  // {
+    // name: "Dassine",
+    // detailsLink: "speaker-details.html",
+    // description: "Quas alias incidunt",
+    // imageUrl: "/img/artistes/Dassine.jpg",
+    // socialLinks: {
+      // twitter: "",
+      // facebook: "",
+      // instagram: "",
+      // linkedin: "",
+    // },
+  // },
+  {
+    name: "Art-fiq-luni",
+    detailsLink: "speaker-details.html",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/Art-fiq-luni.jpg",
     socialLinks: {
       twitter: "",
       facebook: "",
@@ -38,10 +62,34 @@ const members = [
     },
   },
   {
-    name: "William Anderson",
+    name: "Merya",
     detailsLink: "speaker-details.html",
-    description: "Debitis iure vero",
-    imageUrl: "/img/artistes/speaker-4.jpg",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/Merya.jpg",
+    socialLinks: {
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      linkedin: "",
+    },
+  },
+  // {
+    // name: "Sayd",
+    // detailsLink: "speaker-details.html",
+    // description: "Quas alias incidunt",
+    // imageUrl: "/img/artistes/Sayd.jpg",
+    // socialLinks: {
+      // twitter: "",
+      // facebook: "",
+      // instagram: "",
+      // linkedin: "",
+    // },
+  // },
+  {
+    name: "Manel Boufenaz",
+    detailsLink: "speaker-details.html",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/Manel Boufenaz.jpg",
     socialLinks: {
       twitter: "",
       facebook: "",
@@ -50,10 +98,22 @@ const members = [
     },
   },
   {
-    name: "William Anderson",
+    name: "BACH BACCHUS",
     detailsLink: "speaker-details.html",
-    description: "Debitis iure vero",
-    imageUrl: "/img/artistes/speaker-5.jpg",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/BACH BACCHUS.jpg",
+    socialLinks: {
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      linkedin: "",
+    },
+  },
+  {
+    name: "Dj chakour",
+    detailsLink: "speaker-details.html",
+    description: "Quas alias incidunt",
+    imageUrl: "/img/artistes/Dj chakour.jpg",
     socialLinks: {
       twitter: "",
       facebook: "",
@@ -69,7 +129,7 @@ const Artistes = () => {
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
         <h2>
-          Nos Artistes
+          Artistes
           <br />
         </h2>
       </div>
@@ -90,7 +150,7 @@ const Artistes = () => {
                     <h4>
                       <a href="speaker-details.html">{member.name}</a>
                     </h4>
-                    <span>{member.description}</span>
+                    {/* <span>{member.description}</span> */}
                   </div>
                   <div className="social">
                     <a href={member?.socialLinks?.instagram}>

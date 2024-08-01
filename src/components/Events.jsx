@@ -2,21 +2,27 @@ import React from "react";
 
 const hotels = [
   {
-    name: "Non quibusdam blanditiis",
-    imageUrl: "img/event-1.jpg",
-    distanceFromVenue: "Petite Description ",
+    name: "Enfants de GAZA",
+    imageUrl: "img/events/Enfants de GAZA.jpg",
+    distanceFromVenue: "EL Djahidiya ",
     link: "#",
   },
   {
-    name: "Aspernatur assumenda",
-    imageUrl: "img/event-2.jpg",
-    distanceFromVenue: "Petite Description ",
+    name: "ALGERIE 1830-1962",
+    imageUrl: "img/events/ALGERIE 1830-1962.jpg",
+    distanceFromVenue: "EL Djahidiya ",
     link: "#",
   },
   {
-    name: "Dolores ut ut voluptatibu",
-    imageUrl: "img/event-3.jpg",
-    distanceFromVenue: "Petite Description ",
+    name: "ALGERIE 1830-1962 - EVENTIK",
+    imageUrl: "img/events/ALGERIE 1830-1962 - EVENTIK.jpg",
+    distanceFromVenue: "EVENTIK ",
+    link: "#",
+  },
+  {
+    name: "LA PALESTINE D'AVANT",
+    imageUrl: "img/events/LA PALESTINE D'AVANT.jpg",
+    distanceFromVenue: "EVENTIK ",
     link: "#",
   },
 ];
@@ -29,8 +35,9 @@ const Events = () => {
         <div className="container section-title" data-aos="fade-up">
           <h2>Événements</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Découvrez l'art des événements extraordinaires avec RDX. Explorez
+            nos réussites passées et imaginez votre prochain événement avec
+            nous.
           </p>
         </div>
         {/* End Section Title */}
@@ -39,9 +46,10 @@ const Events = () => {
             {hotels.map((event, index) => (
               <div
                 key={`Event ${index}`}
-                className="col-lg-4 col-md-6"
+                className="col-lg-3 col-md-6"
                 data-aos="fade-up"
                 data-aos-delay={100}
+                style={{ height: 350}}
               >
                 <div className="card h-100">
                   <div className="card-img">

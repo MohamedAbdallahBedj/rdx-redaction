@@ -1070,34 +1070,34 @@ section,
   margin-inline: 5px;
 }
 
-.schedule .nav-tabs a {
+.schedule .nav-tabs button {
   border: none;
   border-radius: 50px;
   font-weight: 600;
   background-color: var(--heading-color);
   color: var(--contrast-color);
-  padding: 10px 100px;
+  padding: 10px 50px;
 }
 
 @media (max-width: 991px) {
-  .schedule .nav-tabs a {
+  .schedule .nav-tabs button {
     padding: 8px 60px;
   }
 }
 
 @media (max-width: 767px) {
-  .schedule .nav-tabs a {
+  .schedule .nav-tabs button {
     padding: 8px 50px;
   }
 }
 
 @media (max-width: 480px) {
-  .schedule .nav-tabs a {
+  .schedule .nav-tabs button {
     padding: 8px 30px;
   }
 }
 
-.schedule .nav-tabs a.active {
+.schedule .nav-tabs button.active {
   background-color: var(--accent-color);
   color: var(--contrast-color);
 }
