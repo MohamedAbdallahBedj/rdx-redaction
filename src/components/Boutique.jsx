@@ -198,18 +198,16 @@ const Boutique = () => {
                   height: 300,
                 }}
               >
-                <a href={slide?.imageUrl}>
-                  <img
-                    src={slide?.imageUrl}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
-                    alt=""
-                  />
-                </a>
+                <img
+                  src={slide?.imageUrl}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                  alt=""
+                />
               </swiper-slide>
             ))}
         </swiper-container>
