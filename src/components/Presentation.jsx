@@ -47,7 +47,7 @@ const Presentation = () => {
           id="day-1"
         >
           {events.map((event, index) => (
-            <div className="row schedule-item" key={`Task ${index}`}>
+            <div className="row schedule-item px-4" key={`Task ${index}`}>
               <div className="col-md-2">
                 <time>{event.time}</time>
               </div>

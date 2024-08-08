@@ -1,8 +1,25 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
+const mainLinks = [
+  { link: "acceuil", label: "Accueil", className: `active text-decoration-none` },
+  {
+    link: "qui-somme-nous",
+    label: "Qui somme nous?",
+    className: `text-decoration-none`,
+  },
+  { link: "artistes", label: "Artistes", className: `text-decoration-none` },
+  {
+    link: "evenements",
+    label: "Événements",
+    className: `text-decoration-none`,
+  },
+  { link: "boutique", label: "Boutique", className: `text-decoration-none` },
+];
 
 const Navigation = () => {
+  const [state, setState] = React.useState(null);
+
   useEffect(() => {
     function toggleScrolled() {
       const selectBody = document.querySelector("body");
@@ -17,6 +34,29 @@ const Navigation = () => {
         ? selectBody.classList.add("scrolled")
         : selectBody.classList.remove("scrolled");
     }
+    let navmenulinks = document.querySelectorAll(".navmenu a");
+
+    function navmenuScrollspy() {
+      navmenulinks.forEach((navmenulink) => {
+        if (!navmenulink.hash) return;
+        let section = document.querySelector(navmenulink.hash);
+        if (!section) return;
+        let position = window.scrollY + 200;
+        if (
+          position >= section.offsetTop &&
+          position <= section.offsetTop + section.offsetHeight
+        ) {
+          document
+            .querySelectorAll(".navmenu a.active")
+            .forEach((link) => link.classList.remove("active"));
+          navmenulink.classList.add("active");
+        } else {
+          navmenulink.classList.remove("active");
+        }
+      });
+    }
+    window.addEventListener("load", navmenuScrollspy);
+    document.addEventListener("scroll", navmenuScrollspy);
 
     document.addEventListener("scroll", toggleScrolled);
     window.addEventListener("load", toggleScrolled);
@@ -29,38 +69,16 @@ const Navigation = () => {
           className="logo d-flex align-items-center me-auto text-decoration-none"
         >
           <img src="/img/logo.png" alt="logo" />
-          {/* Uncomment the line below if you also wish to use an text logo */}
-          {/* <h1 className="sitename">RDX Rédaction</h1>  */}
         </Link>
         <nav id="navmenu" className="navmenu">
           <ul>
-            <li>
-              <Link href="#Accueil" className="active text-decoration-none">
-                Acceuil
-                <br />
-              </Link>
-            </li>
-            <li>
-              <Link className="text-decoration-none" href="#qui-somme-nous">
-                Qui somme nous?
-              </Link>
-            </li>
-            <li>
-              <Link className="text-decoration-none" href="#artistes">
-                Artistes
-              </Link>
-            </li>
-            <li>
-              <Link className="text-decoration-none" href="#événements">
-                Événements
-              </Link>
-            </li>
-            <li>
-              <Link className="text-decoration-none" href="#boutique">
-                Boutique
-              </Link>
-            </li>
-
+            {mainLinks.map(({ link, label, className }, index) => (
+              <li key={`link - ${link}`}>
+                <Link href={`#${link}`} className={className}>
+                  {label}
+                </Link>
+              </li>
+            ))}
             {/* <li className="dropdown">
               <Link className="text-decoration-none" href="#">
                 <span>Dropdown</span>{" "}
@@ -111,7 +129,7 @@ const Navigation = () => {
           <i className="mobile-nav-toggle d-xl-none bi bi-list" />
         </nav>
         <Link
-          className="cta-btn d-none d-sm-block text-decoration-none"
+          className="cta-btn d-none d-xl-block text-decoration-none"
           href="#contact"
         >
           Contact

@@ -30,7 +30,7 @@ const hotels = [
 const Events = () => {
   return (
     <>
-      <section id="événements" className="hotels section">
+      <section id="evenements" className="hotels section">
         {/* Section Title */}
         <div className="container section-title" data-aos="fade-up">
           <h2>Événements</h2>

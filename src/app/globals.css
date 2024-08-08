@@ -875,6 +875,9 @@ section,
 
 .section-title p {
   margin-bottom: 0;
+  margin-inline: auto;
+  max-width: 800px;
+
 }
 
 /*--------------------------------------------------------------
@@ -1066,7 +1069,7 @@ section,
 
 .schedule .nav-tabs li {
   display: inline-block;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   margin-inline: 5px;
 }
 

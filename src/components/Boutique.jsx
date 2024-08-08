@@ -63,10 +63,6 @@ const slides = [
     category: 1,
   },
   {
-    imageUrl: "img/merch/9.jpg",
-    category: 1,
-  },
-  {
     imageUrl: "img/merch/10.jpg",
     category: 4,
   },
@@ -129,15 +125,7 @@ const slides = [
   {
     imageUrl: "img/merch/26.jpg",
     category: 1,
-  },
-  {
-    imageUrl: "img/merch/27.jpg",
-    category: 2,
-  },
-  {
-    imageUrl: "img/merch/28.jpg",
-    category: 2,
-  },
+  }
 ];
 
 const Boutique = () => {
