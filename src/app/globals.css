@@ -25,7 +25,7 @@
   /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0e1b4d;
   /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #f82249;
+  --accent-color: #ff0000;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff;
   /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -1290,6 +1290,16 @@ section,
 }
 
 .hotels .card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.product-link {
+  overflow: hidden;
+}
+
+
+.product:hover {
+  transition: 0.3s ease-in-out;
   transform: scale(1.1);
 }
 

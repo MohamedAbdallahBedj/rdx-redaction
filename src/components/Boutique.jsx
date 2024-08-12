@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import { register } from "swiper/element/bundle";
 
@@ -125,7 +126,7 @@ const slides = [
   {
     imageUrl: "img/merch/26.jpg",
     category: 1,
-  }
+  },
 ];
 
 const Boutique = () => {
@@ -186,16 +187,19 @@ const Boutique = () => {
                   height: 300,
                 }}
               >
-                <img
-                  src={slide?.imageUrl}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                  alt=""
-                />
+                <Link className="product-link" href={slide?.imageUrl}>
+                  <img
+                    className="product"
+                    src={slide?.imageUrl}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                    alt=""
+                  />
+                </Link>
               </swiper-slide>
             ))}
         </swiper-container>
