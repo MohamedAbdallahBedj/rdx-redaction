@@ -1,33 +1,19 @@
 import React from "react";
+import EvenementsPagination from "./ui/EvenementsPagination";
 
-const hotels = [
-  {
-    name: "Enfants de GAZA",
-    imageUrl: "img/events/Enfants de GAZA.jpg",
-    distanceFromVenue: "EL Djahidiya ",
-    link: "#",
-  },
-  {
-    name: "ALGERIE 1830-1962",
-    imageUrl: "img/events/ALGERIE 1830-1962.jpg",
-    distanceFromVenue: "EL Djahidiya ",
-    link: "#",
-  },
-  {
-    name: "ALGERIE 1830-1962 - EVENTIK",
-    imageUrl: "img/events/ALGERIE 1830-1962 - EVENTIK.jpg",
-    distanceFromVenue: "EVENTIK ",
-    link: "#",
-  },
-  {
-    name: "LA PALESTINE D'AVANT",
-    imageUrl: "img/events/LA PALESTINE D'AVANT.jpg",
-    distanceFromVenue: "EVENTIK ",
-    link: "#",
-  },
-];
+async function fetchItems() {
+  const res = await fetch(
+    `${process.env.BASE_API_URL}/evenements?_fields=id,name,title,slug,acf&acf_format=standard`
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch items");
+  }
+  return await res.json();
+}
 
-const Events = () => {
+const Events = async () => {
+  const events = await fetchItems();
+
   return (
     <>
       <section id="evenements" className="hotels section">
@@ -41,31 +27,7 @@ const Events = () => {
           </p>
         </div>
         {/* End Section Title */}
-        <div className="container">
-          <div className="row gy-4">
-            {hotels.map((event, index) => (
-              <div
-                key={`Event ${index}`}
-                className="col-lg-3 col-md-6"
-                data-aos="fade-up"
-                data-aos-delay={100}
-                style={{ height: 350}}
-              >
-                <div className="card h-100">
-                  <div className="card-img">
-                    <img src={event.imageUrl} alt="" className="img-fluid" />
-                  </div>
-                  <h3>
-                    <a href="#" className="stretched-link">
-                      {event.name}
-                    </a>
-                  </h3>
-                  <p>{event.distanceFromVenue}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <EvenementsPagination events={events} />
       </section>
       {/* /Hotels Section */}
     </>
