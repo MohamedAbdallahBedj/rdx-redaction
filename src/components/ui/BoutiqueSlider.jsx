@@ -63,7 +63,7 @@ const BoutiqueSlider = ({ categories, slides }) => {
               >
                 <Link
                   className="product-link"
-                  href={slide?.acf?.image_principale}
+                  href={`/boutique/${slide?.slug}`}
                 >
                   <img
                     className="product"

@@ -24,8 +24,6 @@ const EvenementsPagination = ({ events = [] }) => {
             <div
               key={`Event ${index}`}
               className="col-lg-3 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay={100}
               style={{ height: 350 }}
             >
               <div className="card h-100">
@@ -35,8 +33,7 @@ const EvenementsPagination = ({ events = [] }) => {
                 <h3>
                   <a
                     href={event?.acf?.Video}
-                    target="_blank"
-                    className="stretched-link"
+                    className="stretched-link glightbox"
                   >
                     {event?.acf?.title}
                   </a>

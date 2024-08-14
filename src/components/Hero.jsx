@@ -1,4 +1,5 @@
 import React from "react";
+import Teaser from "./ui/Teaser";
 
 const Hero = () => {
   return (
@@ -13,14 +14,8 @@ const Hero = () => {
         <p data-aos="fade-up" data-aos-delay={200}>
           Planifiez Votre Événement Maintenant
         </p>
-        <div data-aos="fade-up" data-aos-delay={200} className="">
-          <a
-            href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-            className="glightbox pulsating-play-btn mt-3"
-          />
-        </div>
+        <Teaser />
       </div>
-
     </section>
   );
 };

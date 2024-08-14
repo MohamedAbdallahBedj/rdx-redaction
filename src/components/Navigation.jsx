@@ -18,7 +18,6 @@ const mainLinks = [
 ];
 
 const Navigation = () => {
-  const [state, setState] = React.useState(null);
 
   useEffect(() => {
     function toggleScrolled() {
@@ -65,7 +64,7 @@ const Navigation = () => {
     <header id="header" className="header d-flex align-items-center fixed-top">
       <div className="container-fluid container-xl position-relative d-flex align-items-center">
         <Link
-          href="index.html"
+          href="/"
           className="logo d-flex align-items-center me-auto text-decoration-none"
         >
           <img src="/img/logo.png" alt="logo" />
@@ -74,7 +73,7 @@ const Navigation = () => {
           <ul>
             {mainLinks.map(({ link, label, className }, index) => (
               <li key={`link - ${link}`}>
-                <Link href={`#${link}`} className={className}>
+                <Link href={`/#${link}`} className={className}>
                   {label}
                 </Link>
               </li>
