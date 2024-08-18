@@ -1,9 +1,12 @@
 "use client";
 import React from "react";
+import YtLightbox from "./Lightbox";
 const ITEMS_PER_PAGE = 4;
 
 const EvenementsPagination = ({ events = [] }) => {
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [open, setOpen] = React.useState(false);
+  const [currentEvent, setCurrentEvent] = React.useState(null);
 
   const totalPages = Math.ceil(events.length / ITEMS_PER_PAGE);
   // Determine the index range of items to display on the current page
@@ -31,12 +34,18 @@ const EvenementsPagination = ({ events = [] }) => {
                   <img src={event?.acf?.image} alt="" className="img-fluid" />
                 </div>
                 <h3>
-                  <a
-                    href={event?.acf?.Video}
-                    className="stretched-link glightbox"
+                  <button
+                    style={{
+                      background: "none",
+                      border: 0,
+                    }}
+                    onClick={() => {
+                      setCurrentEvent(index);
+                      setOpen(true);
+                    }}
                   >
-                    {event?.acf?.title}
-                  </a>
+                    <a className="stretched-link">{event?.acf?.title}</a>
+                  </button>
                 </h3>
                 <p>{event?.acf?.addresse}</p>
               </div>
@@ -44,6 +53,18 @@ const EvenementsPagination = ({ events = [] }) => {
           ))}
         </div>
       </div>
+      <YtLightbox
+        currentEvent={currentEvent}
+        slides={events.map((event) => ({
+          type: "youtube",
+          src: event?.acf?.Video,
+          title: event?.acf?.title,
+          width: 1280,
+          height: 720,
+        }))}
+        open={open}
+        setOpen={setOpen}
+      />
       <div className="container schedule" style={{ marginTop: 20 }}>
         <ul className="nav nav-tabs" role="tablist">
           <li className="nav-item">

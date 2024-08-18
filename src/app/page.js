@@ -1,6 +1,6 @@
 import Artistes from "@/components/Artistes";
 import Boutique from "@/components/Boutique";
-import Contact from "@/components/Contact";
+import Contact from "@/components/Contact/Contact";
 import Events from "@/components/Events";
 import Hero from "@/components/Hero";
 import Presentation from "@/components/Presentation";

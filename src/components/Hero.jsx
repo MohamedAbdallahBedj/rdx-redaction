@@ -1,5 +1,5 @@
 import React from "react";
-import Teaser from "./ui/Teaser";
+import RDXTeaser from "./ui/RDXTeaser";
 
 const Hero = () => {
   return (
@@ -14,7 +14,7 @@ const Hero = () => {
         <p data-aos="fade-up" data-aos-delay={200}>
           Planifiez Votre Événement Maintenant
         </p>
-        <Teaser />
+        <RDXTeaser />
       </div>
     </section>
   );

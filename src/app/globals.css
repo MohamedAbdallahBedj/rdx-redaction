@@ -874,6 +874,7 @@ section,
 }
 
 .section-title p {
+  font-size: 18px;
   margin-bottom: 0;
   margin-inline: auto;
   max-width: 800px;

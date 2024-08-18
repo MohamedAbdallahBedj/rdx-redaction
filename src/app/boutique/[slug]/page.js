@@ -86,10 +86,10 @@ const page = async ({ params }) => {
                 {/* Section Title */}
                 <div className="container section-title" data-aos="fade-up">
                     <h2>Boutique</h2>
-                    <p>
+                    <p style={{ fontSize: '20px' }}>
                         {product?.acf?.description}
                     </p>
-                    <p>
+                    <p style={{ fontSize: '20px' }}>
                         <strong>
                             {`Prix : ${product?.acf?.prix} Da`}
                         </strong>
@@ -186,7 +186,7 @@ const page = async ({ params }) => {
                                         <div className="sent-message">
                                             Your message has been sent. Thank you!
                                         </div>
-                                        
+
                                         <button type="submit">Confirm order</button>
                                     </div>
                                 </div>

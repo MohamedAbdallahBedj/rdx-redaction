@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-const ITEMS_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 8;
 
 const ArtistesPagination = ({ artists = [] }) => {
   const [currentPage, setCurrentPage] = React.useState(1);
@@ -32,9 +32,20 @@ const ArtistesPagination = ({ artists = [] }) => {
                     {/* <span>{artiste.description}</span> */}
                   </div>
                   <div className="social">
-                    <a href={artiste?.acf?.instagram} target="_blank">
-                      <i className="bi bi-instagram" />
-                    </a>
+                    {artiste?.acf?.instagram ? (
+                      <a href={artiste?.acf?.instagram || ""} target="_blank">
+                        <i className="bi bi-instagram" />
+                      </a>
+                    ) : (
+                      <></>
+                    )}
+                    {artiste?.acf?.portfolio ? (
+                      <a href={artiste?.acf?.portfolio || ""} target="_blank">
+                        <i className="bi bi-brush" />
+                      </a>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </div>
               </div>

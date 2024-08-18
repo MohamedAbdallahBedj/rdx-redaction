@@ -1,7 +1,7 @@
 import React from "react";
 import ArtistesPagination from "./ui/ArtistesPagination";
 
-const ITEMS_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 8;
 
 async function fetchItems() {
   const res = await fetch(
