@@ -5,6 +5,8 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 import Navigation from "@/components/Navigation";
 import { AOSInit } from "@/components/AOS";
 import Footer from "@/components/Footer";
+import { ToastProvider } from "@/context/ToastContext";
+import Toast from "@/components/Toast";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300"] });
 
@@ -17,11 +19,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={`index-page ${poppins.className}`}>
-        <AOSInit />
-        <Navigation />
+        <ToastProvider>
+          <AOSInit />
+          <Navigation />
 
-        {children}
-        <Footer />
+          {children}
+          <Footer />
+          <Toast />
+
+        </ToastProvider>
 
       </body>
     </html>

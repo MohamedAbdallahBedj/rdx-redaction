@@ -1,14 +1,40 @@
 "use client";
 
-// http://localhost/wordpress/wp-json/contact-form-7/v1/contact-forms/98/feedback
-
+import ToastContext from "@/context/ToastContext";
 import React from "react";
+import params from "@/app/params.json";
+const { NODE_API_URL } = params;
 
 const ContactForm = () => {
+  const [loading, setLoading] = React.useState(false);
+  const { notificationHandler } = React.useContext(ToastContext);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      subject: event.target.subject.value,
+      message: event.target.message.value,
+    };
+    setLoading(true);
+    const response = await fetch(`${NODE_API_URL}/api/mail`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    setLoading(false);
+    notificationHandler({
+      type: response.ok ? "success" : "error",
+      message: response.ok
+        ? "Votre demande de contact a été enregistrée avec succès."
+        : "L'opération a échoué. Veuillez réessayer.",
+    });
+    if (response.ok) event.target.reset();
+  };
   return (
     <form
-      action=""
-      method="post"
+      onSubmit={handleSubmit}
       className="php-email-form"
       data-aos="fade-up"
       data-aos-delay={400}
@@ -20,7 +46,7 @@ const ContactForm = () => {
             name="name"
             className="form-control"
             placeholder="Nom et prénom"
-            required=""
+            required={true}
           />
         </div>
         <div className="col-md-6 ">
@@ -29,7 +55,7 @@ const ContactForm = () => {
             className="form-control"
             name="email"
             placeholder="Email"
-            required=""
+            required={true}
           />
         </div>
         <div className="col-md-12">
@@ -38,7 +64,7 @@ const ContactForm = () => {
             className="form-control"
             name="subject"
             placeholder="Sujet"
-            required=""
+            required={true}
           />
         </div>
         <div className="col-md-12">
@@ -47,12 +73,24 @@ const ContactForm = () => {
             name="message"
             rows={6}
             placeholder="Message"
-            required=""
+            required={true}
             defaultValue={""}
           />
         </div>
         <div className="col-md-12 text-center">
-          <button type="submit">Send Message</button>
+          {loading ? (
+            <div class="d-flex justify-content-center">
+              <div
+                class="spinner-border"
+                role="status"
+                style={{ color: "#ff0000" }}
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          ) : (
+            <button type="submit">Send Message</button>
+          )}
         </div>
       </div>
     </form>

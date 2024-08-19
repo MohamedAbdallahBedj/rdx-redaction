@@ -1,8 +1,6 @@
 import React from "react";
 import ArtistesPagination from "./ui/ArtistesPagination";
 
-const ITEMS_PER_PAGE = 8;
-
 async function fetchItems() {
   const res = await fetch(
     `${process.env.BASE_API_URL}/artistes?_fields=id,name,title,slug,acf&acf_format=standard`

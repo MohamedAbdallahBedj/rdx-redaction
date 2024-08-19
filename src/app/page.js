@@ -14,8 +14,6 @@ export default function Home() {
       <Events />
       <Boutique />
       <Contact />
-
-
     </main>
 
   );
