@@ -1,7 +1,12 @@
 import React from "react";
 import RDXTeaser from "./ui/RDXTeaser";
+import { fetchItems } from "@/utils/utils";
 
-const Hero = () => {
+const Hero = async () => {
+  const [videoObject] = await fetchItems(
+    "/parameter?_fields=id,title,slug,acf&acf_format=standard&slug=the-link-for-the-hero-section-youtube-video"
+  );
+
   return (
     <section id="acceuil" className="hero section dark-background">
       <img src="/img/hero-bg.jpg" alt="" data-aos="fade-in" className="" />
@@ -14,7 +19,7 @@ const Hero = () => {
         <p data-aos="fade-up" data-aos-delay={200}>
           Planifiez Votre Événement Maintenant
         </p>
-        <RDXTeaser />
+        <RDXTeaser videoObject={videoObject} />
       </div>
     </section>
   );

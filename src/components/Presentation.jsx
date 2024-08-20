@@ -2,22 +2,16 @@ import React from "react";
 
 const events = [
   {
-    time: "",
     title: "Planification d'Événements.",
     description: "Conception et coordination d'événements sur mesure.",
-    speaker: "",
   },
   {
-    time: "",
     title: "Organisation de Concerts.",
     description: "Promotion et communication de l'événement.",
-    speaker: "",
   },
   {
-    time: "",
     title: "Planification/Organisation d'expositions d'art.",
     description: "Organisation d'expositions culturelles, artistiques.",
-    speaker: "",
   },
 ];
 
@@ -32,7 +26,7 @@ const Presentation = () => {
           l'organisation et la gestion d'événements inoubliables. Nous nous
           engageons à transformer vos idées en réalité et à offrir des
           expériences mémorables qui captivent et inspirent. Nos services
-          incluent:{" "}
+          incluent:
         </h3>
       </div>
       {/* End Section Title */}
@@ -52,12 +46,7 @@ const Presentation = () => {
                 <time>{event.time}</time>
               </div>
               <div className="col-md-10">
-                {/* <div className="speaker">
-                                <img src={event.speakerImage} alt={event.speaker} />
-                            </div> */}
-                <h4>
-                  {event.title} <span>{event.speaker}</span>
-                </h4>
+                <h4>{event.title}</h4>
                 <p>{event.description}</p>
               </div>
             </div>

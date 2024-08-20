@@ -1,19 +1,11 @@
 import React from "react";
 import EvenementsPagination from "./ui/EvenementsPagination";
-
-async function fetchItems() {
-  const res = await fetch(
-    `${process.env.BASE_API_URL}/evenements?_fields=id,name,title,slug,acf&acf_format=standard`
-  );
-  if (!res.ok) {
-    throw new Error("Failed to fetch items");
-  }
-  return await res.json();
-}
+import { fetchItems } from "@/utils/utils";
 
 const Events = async () => {
-  const events = await fetchItems();
-
+  const events = await fetchItems(
+    "/event?_fields=id,name,title,slug,acf&acf_format=standard"
+  );
   return (
     <>
       <section id="evenements" className="hotels section">

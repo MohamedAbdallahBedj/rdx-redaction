@@ -124,32 +124,36 @@ function createOrderFormMessage(name, phone, wilaya, product, quantity, addresse
     `;
 }
 
-async function sendMail(to, subject, content) {
+async function sendMail(to, subject, content, type) {
     try {
 
         // Generate test SMTP service account from ethereal.email
         // Only needed if you don't have a real mail account for testing
         // let testAccount = await nodemailer.createTestAccount();
-        let testAccount = {
+        let contactAccount = {
             user: process.env.CONTACT_MAIL,
             pass: process.env.CONTACT_PASS
+        }
+        let orderAccount = {
+            user: process.env.ORDER_MAIL,
+            pass: process.env.ORDER_PASS
         }
 
         // create reusable transporter object using the default SMTP transport
         let transporter = createTransport({
-            host: process.env.CONTACT_HOST,
-            port: process.env.CONTACT_PORT,
+            host: process.env.MAIL_HOST,
+            port: process.env.MAIL_PORT,
             secure: process.env.NODE_ENV === "production", // true for 465, false for other ports
             // secure: true, // true for 465, false for other ports
             auth: {
-                user: testAccount.user, // generated ethereal user
-                pass: testAccount.pass, // generated ethereal password
+                user: type === 'contact' ? contactAccount.user : orderAccount.user, // generated ethereal user
+                pass: type === 'contact' ? contactAccount.pass : orderAccount.pass, // generated ethereal password
             },
         });
 
         // send mail with defined transport object
         let info = await transporter.sendMail({
-            from: testAccount.user,
+            from: contactAccount.user,
             to: to,
             subject: subject,
             html: content,

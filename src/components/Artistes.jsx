@@ -1,18 +1,9 @@
 import React from "react";
 import ArtistesPagination from "./ui/ArtistesPagination";
-
-async function fetchItems() {
-  const res = await fetch(
-    `${process.env.BASE_API_URL}/artistes?_fields=id,name,title,slug,acf&acf_format=standard`
-  );
-  if (!res.ok) {
-    throw new Error("Failed to fetch items");
-  }
-  return await res.json();
-}
+import { fetchItems } from "@/utils/utils";
 
 const Artistes = async () => {
-  const artistes = await fetchItems();
+  const artistes = await fetchItems('/artist?_fields=id,name,title,slug,acf&acf_format=standard');
   return (
     <section id="artistes" className="speakers section">
       {/* Section Title */}

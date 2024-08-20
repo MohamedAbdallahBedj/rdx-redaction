@@ -4,7 +4,7 @@ import { register } from "swiper/element/bundle";
 import React from "react";
 
 const BoutiqueSlider = ({ categories, slides }) => {
-  const [state, setState] = React.useState(categories[0].slug);
+  const [state, setState] = React.useState(categories[0].id);
   React.useEffect(() => {
     // register Swiper custom elements
     register();
@@ -30,9 +30,9 @@ const BoutiqueSlider = ({ categories, slides }) => {
           {categories.map((item, index) => (
             <li className="nav-item" key={`Cat ${index}`}>
               <button
-                className={`nav-link ${item.slug === state ? "active" : ""}`}
+                className={`nav-link ${item.id === state ? "active" : ""}`}
                 onClick={() => {
-                  setState(item.slug);
+                  setState(item.id);
                 }}
                 role="tab"
                 data-bs-toggle="tab"
@@ -52,7 +52,7 @@ const BoutiqueSlider = ({ categories, slides }) => {
           loop="true"
         >
           {slides
-            .filter((item) => item?.acf?.categorie?.slug === state)
+            .filter((item) => item?.acf?.category === state)
             .map((slide, index) => (
               <swiper-slide
                 key={`Slide ${index}`}
@@ -67,7 +67,7 @@ const BoutiqueSlider = ({ categories, slides }) => {
                 >
                   <img
                     className="product"
-                    src={slide?.acf?.image_principale}
+                    src={slide?.acf?.image}
                     style={{
                       width: "100%",
                       height: "100%",

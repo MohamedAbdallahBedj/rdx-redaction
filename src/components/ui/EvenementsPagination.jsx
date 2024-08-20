@@ -31,7 +31,11 @@ const EvenementsPagination = ({ events = [] }) => {
             >
               <div className="card h-100">
                 <div className="card-img">
-                  <img src={event?.acf?.image} alt="" className="img-fluid" />
+                  <img
+                    src={event?.acf?.cover || "/img/noimage.jpg"}
+                    alt=""
+                    className="img-fluid"
+                  />
                 </div>
                 <h3>
                   <button
@@ -47,7 +51,8 @@ const EvenementsPagination = ({ events = [] }) => {
                     <a className="stretched-link">{event?.acf?.title}</a>
                   </button>
                 </h3>
-                <p>{event?.acf?.addresse}</p>
+                <p>{event?.acf?.date}</p>
+                <p>{event?.acf?.localisation}</p>
               </div>
             </div>
           ))}
@@ -57,7 +62,7 @@ const EvenementsPagination = ({ events = [] }) => {
         currentEvent={currentEvent}
         slides={events.map((event) => ({
           type: "youtube",
-          src: event?.acf?.Video,
+          src: event?.acf?.youtube,
           title: event?.acf?.title,
           width: 1280,
           height: 720,

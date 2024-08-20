@@ -174,7 +174,7 @@ const OrderForm = ({ product }) => {
             type="text"
             className="form-control"
             name="prix"
-            value={`${quantity * parseInt(product?.acf?.prix)} DA`}
+            value={`${quantity * parseInt(product?.acf?.price)} DA`}
             disabled
           />
         </div>

@@ -129,7 +129,7 @@ const Navigation = () => {
         </nav>
         <Link
           className="cta-btn d-none d-xl-block text-decoration-none"
-          href="#contact"
+          href="/#contact"
         >
           Contact
         </Link>

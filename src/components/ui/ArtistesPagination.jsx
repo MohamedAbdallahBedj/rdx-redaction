@@ -23,11 +23,15 @@ const ArtistesPagination = ({ artists = [] }) => {
           {currentArtists.map((artiste, index) => (
             <div key={`Member ${index}`} className="col-xl-3 col-lg-4 col-md-6">
               <div className="member">
-                <img src={artiste?.acf?.image} className="img-fluid" alt="" />
+                <img
+                  src={artiste?.acf?.picture || "/img/user.jpg"}
+                  className="img-fluid"
+                  alt=""
+                />
                 <div className="member-info">
                   <div className="member-info-content">
                     <h4>
-                      <a>{artiste?.title?.rendered || ""}</a>
+                      <a>{artiste?.acf?.name || ""}</a>
                     </h4>
                     {/* <span>{artiste.description}</span> */}
                   </div>

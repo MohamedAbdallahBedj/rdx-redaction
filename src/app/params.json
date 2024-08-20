@@ -1,4 +1,4 @@
 {
   "NODE_API_URL": "http://localhost:3001",
-  "BASE_API_URL": "http://localhost/wordpress/wp-json/wp/v2"
+  "WP_API_URL": "http://localhost/wordpress/wp-json/wp/v2"
 }

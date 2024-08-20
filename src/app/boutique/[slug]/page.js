@@ -4,7 +4,7 @@ import OrderForm from './OrderForm';
 
 async function fetchItems(slug) {
     const res = await fetch(
-        `${process.env.BASE_API_URL}/produits?_fields=id,title,slug,%20acf&acf_format=standard&slug=${slug}`
+        `${process.env.WP_API_URL}/item?_fields=id,title,slug,%20acf&acf_format=standard&slug=${slug}`
     );
     if (!res.ok) {
         throw new Error("Failed to fetch items");
@@ -41,7 +41,7 @@ const page = async ({ params }) => {
                     <div className="row gy-4 mt-1">
                         <div className="col-lg-6" data-aos="fade-up" data-aos-delay={300}>
                             <img
-                                src={product?.acf?.image_principale}
+                                src={product?.acf?.image}
                                 style={{ border: 0, width: "100%", height: 400, objectFit: 'contain' }}
                             />
                         </div>

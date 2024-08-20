@@ -1,5 +1,6 @@
 import React from "react";
 import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const YtLightbox = ({ slides, currentEvent, open, setOpen }) => {
   return (

@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import YtLightbox from "./Lightbox";
 
-const Teaser = () => {
+const Teaser = ({ videoObject }) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -18,8 +16,8 @@ const Teaser = () => {
         slides={[
           {
             type: "youtube",
-            src: "https://www.youtube.com/embed/N8tnM9KyLos?si=q3DbVfz7cEat0y89",
-            title: "TNW Conference 2022 | The official aftermovie",
+            src: videoObject?.acf?.value,
+            title: "Teaser",
             width: 1280,
             height: 720,
           },

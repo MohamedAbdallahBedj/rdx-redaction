@@ -70,7 +70,7 @@ app.post('/', async function (req, res) {
         if (!(name && email && subject && message)) return res.status(400).json({ message: "Echec... Informations incomplètes." });
 
         const messageContent = createContactFormMessage(name, email, subject, message);
-        await sendMail(process.env.CONTACT_MAIL, subject, messageContent);
+        await sendMail(process.env.CONTACT_MAIL, subject, messageContent, 'contact');
 
         const queryTxt = `INSERT INTO wp_contacts (name, email, subject, message) VALUES ('${name}', '${email}', '${subject}', '${message}');`;
         await getQueryResults(queryTxt);
@@ -90,7 +90,7 @@ app.post('/order', async function (req, res) {
         if (!(name && phone && wilaya && product && quantity && addresse)) return res.status(400).json({ message: "Echec... Informations incomplètes." });
 
         const result = await fetch(
-            `${process.env.BASE_API_URL}/produits?_fields=id,title,slug,%20acf&acf_format=standard&slug=${product}`
+            `${process.env.WP_API_URL}/produits?_fields=id,title,slug,%20acf&acf_format=standard&slug=${product}`
         );
         if (!result.ok) {
             throw new Error("Failed to fetch items");
@@ -98,7 +98,7 @@ app.post('/order', async function (req, res) {
         const [row] = await result.json();
 
         const messageContent = createOrderFormMessage(name, phone, wilayas[wilaya - 1], row, quantity, addresse);
-        await sendMail(process.env.CONTACT_MAIL, wilaya, messageContent);
+        await sendMail(process.env.ORDER_MAIL, wilaya, messageContent, 'order');
 
         const queryTxt = `INSERT INTO wp_orders (name, phone, wilaya, product, quantity, addresse) VALUES ('${name}', '${phone}', '${wilaya}', '${row?.title?.rendered}', '${quantity}', '${addresse}');`;
         await getQueryResults(queryTxt);
