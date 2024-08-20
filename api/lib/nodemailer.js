@@ -67,7 +67,7 @@ function createOrderFormMessage(name, phone, wilaya, product, quantity, addresse
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Contact Form Submission</title>
+        <title>Order Form Submission</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -110,9 +110,9 @@ function createOrderFormMessage(name, phone, wilaya, product, quantity, addresse
             <p><strong>Nom et prénom du client:</strong> ${name}</p>
             <p><strong>Numéro de téléphone:</strong> ${phone}</p>
             <p><strong>Wilaya:</strong> ${wilaya}</p>
-            <p><strong>Article commandé:</strong> ${product?.acf?.title?.rendered || ""}</p>
+            <p><strong>Article commandé:</strong> ${product?.acf?.description || ""}</p>
             <p><strong>Quantité commandée:</strong> ${quantity}</p>
-            <p><strong>Net a payer:</strong> ${quantity * parseInt(product?.acf?.prix)}</p>
+            <p><strong>Net a payer:</strong> ${quantity * parseInt(product?.acf?.price)}</p>
             <p><strong>Addresse:</strong></p>
             <p>${addresse}</p>
             <div class="footer">

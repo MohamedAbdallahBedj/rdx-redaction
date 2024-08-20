@@ -63,7 +63,10 @@ const BoutiqueSlider = ({ categories, slides }) => {
               >
                 <Link
                   className="product-link"
-                  href={`/boutique/${slide?.slug}`}
+                  href={{
+                    pathname: `/order`,
+                    query: { item: slide?.slug },
+                  }}
                 >
                   <img
                     className="product"

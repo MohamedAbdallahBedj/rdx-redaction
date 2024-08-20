@@ -1,4 +1,4 @@
 {
-  "NODE_API_URL": "http://localhost:3001",
-  "WP_API_URL": "http://localhost/wordpress/wp-json/wp/v2"
+  "NODE_API_URL": "https://demo.rdxredaction.com",
+  "WP_API_URL": "https://wp.rdxredaction.com/wp-json/wp/v2"
 }
