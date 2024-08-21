@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -8,7 +10,7 @@ const Footer = () => {
           <div className="row gy-4">
             <div className="col-lg-4 col-md-6 footer-about">
               <a href="index.html" className="logo d-flex align-items-center">
-                <img src="/img/logo.png" alt="logo" />
+                <Image width={80} height={60} src="/img/logo.png" alt="logo" />
               </a>
               <div className="footer-contact pt-3">
                 <p>A108 Adam Street</p>
@@ -73,29 +75,38 @@ const Footer = () => {
               <strong>
                 <span>RDX Redaction</span>
               </strong>
-              . All Rights Reserved
+              . Tous droits réservés
             </div>
             <div className="credits">
               {/* All the links in the footer should remain intact. */}
               {/* You can delete the links only if you purchased the pro version. */}
               {/* Licensing information: https://bootstrapmade.com/license/ */}
               {/* Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ */}
-              Designed by <a href="https://bootstrapmade.com/">Mohamed Abdallah BEDJEGHA</a>
+              Conception par {" "}
+              <Link
+                href="https://www.linkedin.com/in/mohamed-abdallah-bedjegha-9029821bb/"
+                target="_blank"
+              >
+                Mohamed Abdallah BEDJEGHA
+              </Link>
             </div>
           </div>
           <div className="social-links order-first order-lg-last mb-3 mb-lg-0">
-            <a href="">
-              <i className="bi bi-twitter-x" />
-            </a>
-            <a href="">
+            <Link target="_blank" href="https://www.youtube.com/@RdxRedaction">
+              <i className="bi bi-youtube" />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=61562861131403&mibextid=ZbWKwL"
+            >
               <i className="bi bi-facebook" />
-            </a>
-            <a href="">
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.instagram.com/rdx.redaction/"
+            >
               <i className="bi bi-instagram" />
-            </a>
-            <a href="">
-              <i className="bi bi-linkedin" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

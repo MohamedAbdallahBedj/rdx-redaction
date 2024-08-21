@@ -1,25 +1,16 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import { register } from "swiper/element/bundle";
-import React from "react";
+import Image from "next/image";
 
-const BoutiqueSlider = ({ categories, slides }) => {
+const BoutiqueUI = ({ categories, slides }) => {
   const [state, setState] = React.useState(categories[0].id);
   React.useEffect(() => {
-    // register Swiper custom elements
     register();
   }, []);
   return (
-    <section id="boutique" className="gallery section">
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Boutique</h2>
-        <p>
-          Explorez le merch RDX ! Découvrez des articles uniques et stylés qui
-          reflètent notre créativité. Trouvez votre pièce coup de cœur dès
-          maintenant !
-        </p>
-      </div>
+    <>
       <div className="container schedule">
         <ul
           className="nav nav-tabs"
@@ -43,14 +34,8 @@ const BoutiqueSlider = ({ categories, slides }) => {
           ))}
         </ul>
       </div>
-      {/* End Section Title */}
       <div className="container" data-aos="fade-up" data-aos-delay={100}>
-        <swiper-container
-          slides-per-view="4"
-          navigation="true"
-          // pagination="true"
-          loop="true"
-        >
+        <swiper-container slides-per-view="4" navigation="true" loop="true">
           {slides
             .filter((item) => item?.acf?.category === state)
             .map((slide, index) => (
@@ -64,28 +49,24 @@ const BoutiqueSlider = ({ categories, slides }) => {
                 <Link
                   className="product-link"
                   href={{
-                    pathname: `/order`,
+                    pathname: `/commande`,
                     query: { item: slide?.slug },
                   }}
                 >
-                  <img
+                  <Image
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="product"
                     src={slide?.acf?.image}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
-                    alt=""
+                    alt={slide?.acf?.description}
                   />
                 </Link>
               </swiper-slide>
             ))}
         </swiper-container>
       </div>
-    </section>
+    </>
   );
 };
 
-export default BoutiqueSlider;
+export default BoutiqueUI;

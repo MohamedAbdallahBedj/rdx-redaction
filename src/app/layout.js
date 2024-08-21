@@ -7,6 +7,7 @@ import { AOSInit } from "@/components/AOS";
 import Footer from "@/components/Footer";
 import { ToastProvider } from "@/context/ToastContext";
 import Toast from "@/components/Toast";
+import NavigationMobile from "@/components/NavigationMobile";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "300"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <ToastProvider>
           <AOSInit />
           <Navigation />
+          <NavigationMobile />
 
           {children}
           <Footer />

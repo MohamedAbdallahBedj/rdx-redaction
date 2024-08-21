@@ -1,8 +1,9 @@
 "use client";
+import Image from "next/image";
 import React from "react";
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 4;
 
-const ArtistesPagination = ({ artists = [] }) => {
+const ArtistesUI = ({ artists = [] }) => {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   const totalPages = Math.ceil(artists.length / ITEMS_PER_PAGE);
@@ -20,20 +21,21 @@ const ArtistesPagination = ({ artists = [] }) => {
     <div data-aos="fade-up" data-aos-delay={100}>
       <div className="container">
         <div className="row gy-4">
-          {currentArtists.map((artiste, index) => (
+          {currentArtists.flat().map((artiste, index) => (
             <div key={`Member ${index}`} className="col-xl-3 col-lg-4 col-md-6">
               <div className="member">
-                <img
+                <Image
+                  fill
+                  style={{ objectFit: "cover" }}
                   src={artiste?.acf?.picture || "/img/user.jpg"}
                   className="img-fluid"
-                  alt=""
+                  alt={artiste?.acf?.name}
                 />
                 <div className="member-info">
                   <div className="member-info-content">
                     <h4>
                       <a>{artiste?.acf?.name || ""}</a>
                     </h4>
-                    {/* <span>{artiste.description}</span> */}
                   </div>
                   <div className="social">
                     {artiste?.acf?.instagram ? (
@@ -71,7 +73,7 @@ const ArtistesPagination = ({ artists = [] }) => {
                 padding: "10px 10px",
               }}
             >
-              {`<`}
+              <i className="bi bi-caret-left-fill"></i>
             </button>
           </li>
           <li>
@@ -81,7 +83,7 @@ const ArtistesPagination = ({ artists = [] }) => {
                 marginInline: 5,
               }}
             >
-              Page {currentPage} de {totalPages}
+              Page {currentPage} / {totalPages}
             </span>
           </li>
           <li className="nav-item">
@@ -96,7 +98,7 @@ const ArtistesPagination = ({ artists = [] }) => {
                 padding: "10px 10px",
               }}
             >
-              {`>`}
+              <i className="bi bi-caret-right-fill"></i>
             </button>
           </li>
         </ul>
@@ -105,4 +107,4 @@ const ArtistesPagination = ({ artists = [] }) => {
   );
 };
 
-export default ArtistesPagination;
+export default ArtistesUI;

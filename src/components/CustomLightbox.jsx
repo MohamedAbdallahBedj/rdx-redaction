@@ -2,15 +2,23 @@ import React from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-const YtLightbox = ({ slides, currentEvent, open, setOpen }) => {
+const DEFAULT_ID = "evjlt38J-lA";
+
+const CustomLightbox = ({
+  slides = [],
+  currentSlide = 0,
+  open = false,
+  setOpen = () => {},
+  padding = 0,
+}) => {
   return (
     <Lightbox
       open={open}
       close={() => setOpen(false)}
       slides={slides}
-      index={currentEvent}
+      index={currentSlide}
       carousel={{
-        padding: 72,
+        padding,
       }}
       controller={{ closeOnPullDown: true, closeOnBackdropClick: true }}
       render={{
@@ -27,9 +35,10 @@ const YtLightbox = ({ slides, currentEvent, open, setOpen }) => {
                 rect.height,
                 (slide.height * rect.width) / slide.width
               )}
-              src={slide.src}
+              src={`https://www.youtube-nocookie.com/embed/${
+                slide?.src || DEFAULT_ID
+              }?autoplay=1`}
               title={slide.title}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -39,4 +48,4 @@ const YtLightbox = ({ slides, currentEvent, open, setOpen }) => {
   );
 };
 
-export default YtLightbox;
+export default CustomLightbox;

@@ -1,9 +1,10 @@
-import Artistes from "@/components/Artistes";
-import Boutique from "@/components/Boutique";
-import Contact from "@/components/Contact/Contact";
-import Events from "@/components/Events";
-import Hero from "@/components/Hero";
-import Presentation from "@/components/Presentation";
+import Artistes from "@/page/Artistes";
+import Boutique from "@/page/Boutique";
+import Contact from "@/page/Contact/Contact";
+import Evenements from "@/page/Evenements";
+import Hero from "@/page/Hero";
+import Presentation from "@/page/Presentation";
+
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <Hero />
       <Presentation />
       <Artistes />
-      <Events />
+      <Evenements />
       <Boutique />
       <Contact />
     </main>

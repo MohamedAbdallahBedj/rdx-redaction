@@ -193,13 +193,13 @@ const OrderForm = ({ product }) => {
         </div>
         <div className="col-md-12 text-center">
           {loading ? (
-            <div class="d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
               <div
-                class="spinner-border"
+                className="spinner-border"
                 role="status"
                 style={{ color: "#ff0000" }}
               >
-                <span class="visually-hidden">Loading...</span>
+                <span className="visually-hidden">Loading...</span>
               </div>
             </div>
           ) : (

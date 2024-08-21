@@ -1,6 +1,6 @@
 import React from "react";
 
-const events = [
+const missions = [
   {
     title: "Planification d'Événements.",
     description: "Conception et coordination d'événements sur mesure.",
@@ -23,7 +23,7 @@ const Presentation = () => {
         <h2>Qui somme nous?</h2>
         <h3 className="sub-heading">
           Chez <strong>RDX Rédaction</strong>, nous sommes passionnés par
-          l'organisation et la gestion d'événements inoubliables. Nous nous
+          l&apos;organisation et la gestion d&apos;événements inoubliables. Nous nous
           engageons à transformer vos idées en réalité et à offrir des
           expériences mémorables qui captivent et inspirent. Nos services
           incluent:
@@ -40,7 +40,7 @@ const Presentation = () => {
           className="col-lg-9 tab-pane fade show active"
           id="day-1"
         >
-          {events.map((event, index) => (
+          {missions.map((event, index) => (
             <div className="row schedule-item px-4" key={`Task ${index}`}>
               <div className="col-md-2">
                 <time>{event.time}</time>

@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
-import YtLightbox from "./Lightbox";
+import YtLightbox from "./CustomLightbox";
+import Image from "next/image";
 const ITEMS_PER_PAGE = 4;
 
-const EvenementsPagination = ({ events = [] }) => {
+const EvenementsUI = ({ events = [] }) => {
   const [currentPage, setCurrentPage] = React.useState(1);
   const [open, setOpen] = React.useState(false);
   const [currentEvent, setCurrentEvent] = React.useState(null);
@@ -31,9 +32,11 @@ const EvenementsPagination = ({ events = [] }) => {
             >
               <div className="card h-100">
                 <div className="card-img">
-                  <img
+                  <Image
+                    height={150}
+                    width={300}
                     src={event?.acf?.cover || "/img/noimage.jpg"}
-                    alt=""
+                    alt={event?.acf?.title}
                     className="img-fluid"
                   />
                 </div>
@@ -84,7 +87,7 @@ const EvenementsPagination = ({ events = [] }) => {
                 padding: "10px 10px",
               }}
             >
-              {`<`}
+              <i className="bi bi-caret-left-fill"></i>
             </button>
           </li>
           <li>
@@ -94,7 +97,7 @@ const EvenementsPagination = ({ events = [] }) => {
                 marginInline: 5,
               }}
             >
-              Page {currentPage} de {totalPages}
+              Page {currentPage} / {totalPages}
             </span>
           </li>
           <li className="nav-item">
@@ -109,7 +112,7 @@ const EvenementsPagination = ({ events = [] }) => {
                 padding: "10px 10px",
               }}
             >
-              {`>`}
+              <i className="bi bi-caret-right-fill"></i>
             </button>
           </li>
         </ul>
@@ -118,4 +121,4 @@ const EvenementsPagination = ({ events = [] }) => {
   );
 };
 
-export default EvenementsPagination;
+export default EvenementsUI;
